@@ -8,30 +8,31 @@ header('location:index.php');
 }
 else{
 
-if(isset($_POST['submit']))
-{
-$uid=$_SESSION['id'];
-$category=$_POST['category'];
-$subcat=$_POST['subcategory'];
-$complaintype=$_POST['complaintype'];
-$state=$_POST['state'];
-$noc=$_POST['noc'];
-$complaintdetials=$_POST['complaindetails'];
-$compfile=$_FILES["compfile"]["name"];
+  if (isset($_POST['submit'])) {
+    $uid = $_SESSION['id'];
+    $category = $_POST['category'];
+    $subcat = $_POST['subcategory'];
+    $complaintype = $_POST['complaintype'];
+    $state = $_POST['state'];
+    $noc = $_POST['noc'];
+    $complaintdetials = $_POST['complaindetails'];
+    $compfile = $_FILES["compfile"]["name"];
+    $anonymous = isset($_POST['anonymous']) ? $_POST['anonymous'] : 0; // Use the selected value or default to 0 (No)
 
-
-
-move_uploaded_file($_FILES["compfile"]["tmp_name"],"complaintdocs/".$_FILES["compfile"]["name"]);
-$query=mysqli_query($bd, "insert into tblcomplaints(userId,category,subcategory,complaintType,state,noc,complaintDetails,complaintFile) values('$uid','$category','$subcat','$complaintype','$state','$noc','$complaintdetials','$compfile')");
-
-$sql=mysqli_query($bd, "select complaintNumber from tblcomplaints  order by complaintNumber desc limit 1");
-while($row=mysqli_fetch_array($sql))
-{
- $cmpn=$row['complaintNumber'];
+    move_uploaded_file($_FILES["compfile"]["tmp_name"], "complaintdocs/" . $_FILES["compfile"]["name"]);
+    
+    $query = mysqli_query($bd, "INSERT INTO tblcomplaints (userId, category, subcategory, complaintType, state, noc, complaintDetails, complaintFile, anonymous) 
+            VALUES ('$uid', '$category', '$subcat', '$complaintype', '$state', '$noc', '$complaintdetials', '$compfile', '$anonymous')");
+    
+    $sql = mysqli_query($bd, "SELECT complaintNumber FROM tblcomplaints ORDER BY complaintNumber DESC LIMIT 1");
+    
+    while ($row = mysqli_fetch_array($sql)) {
+        $cmpn = $row['complaintNumber'];
+    }
+    $complainno = $cmpn;
+    echo '<script> alert("Your complaint has been successfully filed, and your complaint no is " + "' . $complainno . '")</script>';
 }
-$complainno=$cmpn;
-echo '<script> alert("Your complain has been successfully filled and your complaintno is  "+"'.$complainno.'")</script>';
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -101,7 +102,17 @@ function getCat(val) {
                       <?php }?>
 
                       <form class="form-horizontal style-form" method="post" name="complaint" enctype="multipart/form-data" >
-
+                      <div class="form-group">
+  <label class="col-sm-2 col-sm-2 control-label">Anonymous Complaint</label>
+  <div class="col-sm-4">
+    <label class="radio-inline">
+      <input type="radio" name="anonymous" value="1"> Yes
+    </label>
+    <label class="radio-inline">
+      <input type="radio" name="anonymous" value="0" checked> No
+    </label>
+  </div>
+</div>
 <div class="form-group">
 <label class="col-sm-2 col-sm-2 control-label">Category</label>
 <div class="col-sm-4">

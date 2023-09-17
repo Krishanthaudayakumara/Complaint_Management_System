@@ -67,7 +67,7 @@ while($row=mysqli_fetch_array($query))
 											<td><b>Complaint Number</b></td>
 											<td><?php echo htmlentities($row['complaintNumber']);?></td>
 											<td><b>Complainant Name</b></td>
-											<td> <?php echo htmlentities($row['name']);?></td>
+											<td><?php echo $row['anonymous'] ? 'Anonymous' : htmlentities($row['name']);?></td> 
 											<td><b>Reg Date</b></td>
 											<td><?php echo htmlentities($row['regDate']);?>
 											</td>
@@ -148,8 +148,13 @@ while($rw=mysqli_fetch_array($ret))
 											 <button type="button" class="btn btn-primary">Take Action</button></td>
 											</a><?php } ?></td>
 											<td colspan="4"> 
-											<a href="javascript:void(0);" onClick="popUpWindow('http://localhost/Complaint Management System/admin/userprofile.php?uid=<?php echo htmlentities($row['userId']);?>');" title="Update order">
-											 <button type="button" class="btn btn-primary">View User Detials</button></a></td>
+											<?php 
+    // Only display the "View User Details" button if the complainant is not anonymous
+    if (!$row['anonymous']) { ?>
+        <a href="javascript:void(0);" onClick="popUpWindow('http://localhost/Complaint Management System/admin/userprofile.php?uid=<?php echo htmlentities($row['userId']);?>');" title="Update order">
+            <button type="button" class="btn btn-primary">View User Details</button>
+        </a>
+    <?php } ?></td>
 											
 										</tr>
 										<?php  } ?>
