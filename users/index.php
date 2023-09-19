@@ -53,6 +53,7 @@ $errormsg="Invalid email id or Contact no";
 }
 ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -94,8 +95,10 @@ return true;
 
 	  <div id="login-page">
 	  	<div class="container">
-	  	
+	  
+		  <h2 class="logo"></h2>
 		      <form class="form-login" name="login" method="post">
+				<span>
 		        <h2 class="form-login-heading">sign in now</h2>
 		        <p style="padding-left:4%; padding-top:2%;  color:red">
 		        	<?php if($errormsg){
@@ -123,9 +126,9 @@ echo htmlentities($msg);
 		                Don't have an account yet?<br/>
 		                <a class="" href="registration.php">
 		                    Create an account
-		                </a>
+		                </a> 
 		            </div>
-		
+
 		        </div>
 		
 		          <!-- Modal -->

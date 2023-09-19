@@ -12,7 +12,7 @@ Premium: http://www.gridgum.com
 /* BASIC THEME CONFIGURATION */
 body {
     color: #797979;
-	background: #f2f2f2;
+	background: #797979;
     font-family: 'Ruda', sans-serif;
     padding: 0px !important;
     margin: 0px !important;
@@ -92,8 +92,8 @@ a, a:hover, a:focus {
 
 .btn-theme {
   color: #fff;
-  background-color: #68dff0;
-  border-color: #48bcb4;
+  background-color: #873e23;
+  border-color: #873e23;
 }
 .btn-theme:hover,
 .btn-theme:focus,
@@ -101,8 +101,8 @@ a, a:hover, a:focus {
 .btn-theme.active,
 .open .dropdown-toggle.btn-theme {
   color: #fff;
-  background-color: #48bcb4;
-  border-color: #48bcb4;
+  background-color: #592918;
+  border-color: #592918;
 }
 
 .btn-theme02 {
@@ -1925,18 +1925,33 @@ label {
 
 /*LOGIN CONFIGURATION PAGE*/
 .form-login {
-	max-width: 330px;
-	margin: 100px auto 0;
+	max-width: 400px;
+	margin: 1px auto 0;
 	background: #fff;
-	border-radius: 5px;
-	-webkit-border-radius: 5px;
+    border-radius: 5px;
+   -webkit-border-radius: 5px;
+} 
+
+
+.logo {
+    width: 140px;
+    height: 160px;
+    background-image: url('../img/logo.png');
+    background-size: cover; 
+    position: relative;
+    margin-top: 10px;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -0%);
+    
 }
 
+
 .form-login h2.form-login-heading {
-	margin: 0;
+	margin: 0px;
 	padding: 25px 20px;
 	text-align: center;
-	background: #68dff0;
+	background: #873e23;
 	border-radius: 5px 5px 0 0;
 	-webkit-border-radius: 5px 5px 0 0;
 	color: #fff;
@@ -1944,6 +1959,7 @@ label {
 	text-transform: uppercase;
 	font-weight: 300;
 }
+
 .login-wrap {
 	padding: 20px;
 }

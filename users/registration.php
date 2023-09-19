@@ -47,7 +47,7 @@ error:function (){}
   <body>
 	  <div id="login-page">
 	  	<div class="container">
-	  	
+		  <h2 class="logo"></h2>
 		      <form class="form-login" method="post">
 		        <h2 class="form-login-heading">User Registration</h2>
 		        <p style="padding-left: 1%; color: green">
