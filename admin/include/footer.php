@@ -2,6 +2,6 @@
 		<div class="container">
 
 
-			<b class="copyright">&copy; 2020 CMS </b> All rights reserved.
+			<b class="copyright">&copy; 2023 UOM </b> All rights reserved.
 		</div>
 	</div>

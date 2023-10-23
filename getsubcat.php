@@ -9,7 +9,7 @@ if(!empty($_POST["catid"]))
  }
  else{
  $stmt = mysqli_query($bd, "SELECT subcategory FROM subcategory WHERE categoryid ='$id'");
- ?><option selected="selected">Select Subcategory </option><?php
+ ?><option selected="selected">Select Department </option><?php
  while($row=mysqli_fetch_array($stmt))
  {
   ?>

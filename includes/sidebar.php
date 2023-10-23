@@ -3,7 +3,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu" id="nav-accordion">
               
-              	  <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+              	  <p class="centered"><a href="./"><img src="assets/img/logo.png" class="img-circle" width="100"  style="padding-bottom:30px;"></a></p>
                    <?php $query=mysqli_query($bd, "select fullName from users where userEmail='".$_SESSION['login']."'");
  while($row=mysqli_fetch_array($query)) 
  {

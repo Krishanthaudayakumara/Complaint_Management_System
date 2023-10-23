@@ -114,10 +114,10 @@ function getCat(val) {
   </div>
 </div>
 <div class="form-group">
-<label class="col-sm-2 col-sm-2 control-label">Category</label>
+<label class="col-sm-2 col-sm-2 control-label">Faculty</label>
 <div class="col-sm-4">
 <select name="category" id="category" class="form-control" onChange="getCat(this.value);" required="">
-<option value="">Select Category</option>
+<option value="">Select Faculty</option>
 <?php $sql=mysqli_query($bd, "select id,categoryName from category ");
 while ($rw=mysqli_fetch_array($sql)) {
   ?>
@@ -127,10 +127,10 @@ while ($rw=mysqli_fetch_array($sql)) {
 ?>
 </select>
  </div>
-<label class="col-sm-2 col-sm-2 control-label">Sub Category </label>
+<label class="col-sm-2 col-sm-2 control-label">Department </label>
  <div class="col-sm-4">
 <select name="subcategory" id="subcategory" class="form-control" >
-<option value="">Select Subcategory</option>
+<option value="">Select Department</option>
 </select>
 </div>
  </div>

@@ -51,11 +51,11 @@ while($row=mysqli_fetch_array($query))
 
 
 <div class="row mt">
-            <label class="col-sm-2 col-sm-2 control-label"><b>Category :</b></label>
+            <label class="col-sm-2 col-sm-2 control-label"><b>Faculty :</b></label>
               <div class="col-sm-4">
               <p><?php echo htmlentities($row['catname']);?></p>
               </div>
-<label class="col-sm-2 col-sm-2 control-label"><b>Sub Category :</b> </label>
+<label class="col-sm-2 col-sm-2 control-label"><b>Department :</b> </label>
               <div class="col-sm-4">
               <p><?php echo htmlentities($row['subcategory']);?></p>
               </div>
