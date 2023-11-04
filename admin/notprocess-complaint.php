@@ -1,4 +1,5 @@
 
+
 <?php
 session_start();
 include('include/config.php');
@@ -76,7 +77,7 @@ while($row=mysqli_fetch_array($query))
 ?>										
 										<tr>
 											<td><?php echo htmlentities($row['complaintNumber']);?></td>
-											<td><?php echo $row['anonymous'] ? 'Anonymous' : htmlentities($row['name']);?></td>
+											<td><?php echo htmlentities($row['name']);?></td>
 											<td><?php echo htmlentities($row['regDate']);?></td>
 										
 											<td><button type="button" class="btn btn-danger">Not process yet</button></td>
