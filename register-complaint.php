@@ -9,7 +9,7 @@ header('location:index.php');
 else{
 
   if (isset($_POST['submit'])) {
-    $uid = $_SESSION['id'];
+    
     $category = $_POST['category'];
     $subcat = $_POST['subcategory'];
     $complaintype = $_POST['complaintype'];
@@ -18,7 +18,13 @@ else{
     $complaintdetials = $_POST['complaindetails'];
     $compfile = $_FILES["compfile"]["name"];
     $anonymous = isset($_POST['anonymous']) ? $_POST['anonymous'] : 0; // Use the selected value or default to 0 (No)
-
+    if ($anonymous == 1) {
+      // If the complaint is anonymous, set the userId to a default value
+      $uid = null; // You can change this default value to whatever user ID you want to use for anonymous complaints
+  } else {
+      // If the complaint is not anonymous, use the actual user's ID
+      $uid = $_SESSION['id'];
+  }
     move_uploaded_file($_FILES["compfile"]["tmp_name"], "complaintdocs/" . $_FILES["compfile"]["name"]);
     
     $query = mysqli_query($bd, "INSERT INTO tblcomplaints (userId, category, subcategory, complaintType, state, noc, complaintDetails, complaintFile, anonymous) 
