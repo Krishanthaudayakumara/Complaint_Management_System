@@ -71,7 +71,7 @@ while($row=mysqli_fetch_array($query))
 <div class="control-group">
 <label class="control-label" for="basicinput">Faculty Name</label>
 <div class="controls">
-<input type="text" placeholder="Enter category Name"  name="category" value="<?php echo  htmlentities($row['categoryName']);?>" class="span8 tip" required>
+<input type="text" placeholder="Enter Faculty Name"  name="category" value="<?php echo  htmlentities($row['categoryName']);?>" class="span8 tip" required>
 </div>
 </div>
 

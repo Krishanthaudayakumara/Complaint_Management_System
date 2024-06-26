@@ -104,7 +104,7 @@ if (strlen($_SESSION['login']) == 0) {
                     <b>Oh snap!</b> </b> <?php echo htmlentities($errormsg); ?>
                   </div>
                 <?php } ?>
-                <?php echo $_SESSION['id']; ?>
+                <!-- <?php echo $_SESSION['id']; ?> -->
 
 
                 <form class="form-horizontal style-form" method="post" name="complaint" enctype="multipart/form-data">

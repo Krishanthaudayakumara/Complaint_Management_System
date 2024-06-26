@@ -91,7 +91,7 @@ while($row=mysqli_fetch_array($query))
 <div class="control-group">
 <label class="control-label" for="basicinput">Department Name</label>
 <div class="controls">
-<input type="text" placeholder="Enter SubCategory Name"  name="subcategory" class="span8 tip" required>
+<input type="text" placeholder="Enter Department Name"  name="subcategory" class="span8 tip" required>
 </div>
 </div>
 
@@ -117,7 +117,7 @@ while($row=mysqli_fetch_array($query))
 										<tr>
 											<th>#</th>
 											<th>Faculty</th>
-											<th>Description</th>
+											<th>Department</th>
 											<th>Creation date</th>
 											<th>Last Updated</th>
 											<th>Action</th>

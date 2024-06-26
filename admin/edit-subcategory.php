@@ -70,7 +70,7 @@ while($row=mysqli_fetch_array($query))
 ?>		
 
 <div class="control-group">
-<label class="control-label" for="basicinput">Category</label>
+<label class="control-label" for="basicinput">Faculty</label>
 <div class="controls">
 <select name="category" class="span8 tip" required>
 <option value="<?php echo htmlentities($row['id']);?>"><?php echo htmlentities($catname=$row['categoryName']);?></option>
@@ -94,9 +94,9 @@ else{
 
 
 <div class="control-group">
-<label class="control-label" for="basicinput">SubCategory Name</label>
+<label class="control-label" for="basicinput">Department Name</label>
 <div class="controls">
-<input type="text" placeholder="Enter category Name"  name="subcategory" value="<?php echo  htmlentities($row['subcategory']);?>" class="span8 tip" required>
+<input type="text" placeholder="Enter Department Name"  name="subcategory" value="<?php echo  htmlentities($row['subcategory']);?>" class="span8 tip" required>
 </div>
 </div>
 

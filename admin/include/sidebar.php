@@ -3,6 +3,8 @@
 
 
 		<ul class="widget widget-menu unstyled">
+		<li><a href="AdminDashboard.php"><i class="menu-icon icon-tasks"></i> Dashboard </a></li>
+
 			<li>
 				<a class="collapsed" data-toggle="collapse" href="#togglePages">
 					<i class="menu-icon icon-cog"></i>
@@ -56,7 +58,7 @@
 				</a>
 				<ul id="toggleUsers" class="collapse unstyled">
 				<li>
-					<a href="../registration.php">
+					<a href="./add-users.php">
 							<i class="icon-tasks"></i>
 							Add New Users
 						</a>
